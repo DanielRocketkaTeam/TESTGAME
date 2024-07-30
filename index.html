@@ -40,6 +40,17 @@
         p{
             margin-bottom:10px;
         }
+        button{
+            width:300px;
+            height:300px;
+            display: inline-block;
+            background-color: var(--tg-theme-bg-color);
+            border: 0;
+            transition: all .1s ease-in;
+        }
+        button:active {
+            background-color: green;
+        }
 
     </style>
 </head>
@@ -47,7 +58,7 @@
     <div class="main">
         <h1>АКИТАП</h1>
         <p>ЖМИ НА КНОПКУ - ЗАРАБАТЫВАЙ МОНЕТЫ!</p>
-        <button><img src="coin.png" alt="Кнопка «button»"></button>
+        <button><img src="coin.png" width="300" height="300" alt="Кнопка «button»"></button>
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
