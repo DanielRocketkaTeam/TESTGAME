@@ -2,31 +2,14 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tap App</title>
-    <script>
-        window.onload = function() {
-            document.getElementById("tapButton").onclick = function() {
-                // Отправка данных в бот при нажатии кнопки
-                window.Telegram.WebApp.sendData('tap');
-            };
-        }
-    </script>
+    <title>AKITAP</title>
 </head>
 <body>
-    <h1>Добро пожаловать в Тапалку!</h1>
-    <button id="tapButton">Tap!</button>
-    <div id="count">Количество тапов: 0</div>
-
-    <script>
-        function updateCount(count) {
-            document.getElementById("count").innerText = "Количество тапов: " + count;
-        }
-
-        // Получаем данные от Telegram Web App
-        window.Telegram.WebApp.onEvent('webAppDataReceived', function(data) {
-            updateCount(data.data);
-        });
-    </script>
+    <div id="main">
+        <button class="image-button"></button>
+        <h1>АКИТАП</h1>
+        <p>ЖМИ НА КНОПКУ - ЗАРАБАТЫВАЙ МОНЕТЫ!</p>
+        <button><img src="coin.png" alt="Кнопка «button»"></button>
+    </div>
 </body>
 </html>
