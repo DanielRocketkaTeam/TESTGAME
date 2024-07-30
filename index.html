@@ -2,14 +2,37 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>AKITAP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Счетчик</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        #counter {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 2em;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div id="main">
-        <button class="image-button"></button>
-        <h1>АКИТАП</h1>
-        <p>ЖМИ НА КНОПКУ - ЗАРАБАТЫВАЙ МОНЕТЫ!</p>
-        <button><img src="coin.png" alt="Кнопка «button»"></button>
+    <div>
+        <div id="counter">Счетчик: {{ counter }}</div>
+        <button onclick="incrementCounter()">Увеличить</button>
     </div>
+    <script>
+        async function incrementCounter() {
+            const response = await fetch('/increment');
+            const newCounter = await response.text();
+            document.getElementById('counter').innerText = 'Счетчик: ' + newCounter;
+        }
+    </script>
 </body>
 </html>
