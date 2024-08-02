@@ -13,53 +13,17 @@
     const button = document.querySelector('button');
 
     button.addEventListener('mousedown', () => {
-      if (!isMouseDown) {
-        isMouseDown = true;
-      }
+      pressedFingers++; // Увеличиваем счетчик нажатых пальцев
+      incrementCounter(); // Увеличиваем счетчик на единицу
     });
 
     button.addEventListener('mouseup', () => {
-      isMouseUP = True;
-      incrementCounter();
-    });
-    button.addEventListener('mouseup', () => {
-      isMouseUP = True;
-      incrementCounter();
-    });
-    button.addEventListener('mouseup', () => {
-      isMouseUP = True;
-      incrementCounter();
-    });
-    button.addEventListener('mouseup', () => {
-      isMouseUP = True;
-      incrementCounter();
-    });
-    button.addEventListener('mouseup', () => {
-      isMouseUP = True;
-      incrementCounter();
-    });
-    button.addEventListener('mouseup', () => {
-      isMouseUP = True;
-      incrementCounter();
-    });
-    button.addEventListener('mouseup', () => {
-      isMouseUP = True;
-      incrementCounter();
-    });
-    button.addEventListener('mouseup', () => {
-      isMouseUP = True;
-      incrementCounter();
-    });
-    button.addEventListener('mouseup', () => {
-      isMouseUP = True;
-      incrementCounter();
-    });
-    button.addEventListener('mouseup', () => {
-      isMouseUP = True;
-      incrementCounter();
+      pressedFingers--; // Уменьшаем счетчик нажатых пальцев
     });
 
-
+    button.addEventListener('mouseout', () => {
+      pressedFingers--; // Уменьшаем счетчик нажатых пальцев
+    });
   });
 </script>
 <head>
