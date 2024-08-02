@@ -23,12 +23,13 @@
         navigator.vibrate(50)
     });
 
-    button.addEventListener('mouseup', () => {
+    button.addEventListener('touchstart', () => {
         buttonWidth += 10; // Увеличиваем ширину на 10 пикселей
         buttonHeight += 10; // Увеличиваем высоту на 10 пикселей
         image.style.width = buttonWidth + 'px'; // Обновляем стиль ширины изображения
         image.style.height = buttonHeight + 'px'; // Обновляем стиль высоты изображения
         incrementCounter(); // Увеличиваем счетчик на единицу
+        navigator.vibrate(50)
     });
 
     button.addEventListener('mouseout', () => {
@@ -79,6 +80,7 @@
             margin-bottom:10px;
         }
         button{
+            margin-top:15px;
             width:300px;
             height:300px;
             display: inline-block;
