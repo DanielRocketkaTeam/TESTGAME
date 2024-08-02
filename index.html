@@ -8,14 +8,15 @@
     document.getElementById("counter").innerHTML = counter;
     localStorage.setItem("counter", counter);
   }
-   // Добавляем обработчик события "mousedown" для кнопки
-  document.addEventListener('DOMContentLoaded', () => {
+
+   document.addEventListener('DOMContentLoaded', () => {
     const button = document.querySelector('button');
-    let isMouseDown = false;
 
     button.addEventListener('mousedown', () => {
-      isMouseDown = true;
-      incrementCounter(); // Увеличиваем счетчик при нажатии
+      if (!isMouseDown) {
+        isMouseDown = true;
+        incrementCounter();
+      }
     });
 
     button.addEventListener('mouseup', () => {
@@ -24,12 +25,6 @@
 
     button.addEventListener('mouseout', () => {
       isMouseDown = false;
-    });
-
-    button.addEventListener('click', () => {
-      if (!isMouseDown) {
-        incrementCounter(); // Увеличиваем счетчик при отпускании кнопки
-      }
     });
   });
 </script>
