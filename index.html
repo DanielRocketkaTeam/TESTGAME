@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="ru">
 <script>
-  let counter = 0; // Начальное значение счетчика
+    let counter = localStorage.getItem("counter") || 0;
 
   function incrementCounter() {
     counter++;
     document.getElementById("counter").innerHTML = counter;
+    localStorage.setItem("counter", counter);
   }
+   // Добавляем обработчик события "mousedown" для кнопки
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('button');
+    let isMouseDown = false;
+
+    button.addEventListener('mousedown', () => {
+      isMouseDown = true;
+      incrementCounter(); // Увеличиваем счетчик при нажатии
+    });
+
+    button.addEventListener('mouseup', () => {
+      isMouseDown = false;
+    });
+
+    button.addEventListener('mouseout', () => {
+      isMouseDown = false;
+    });
+
+    button.addEventListener('click', () => {
+      if (!isMouseDown) {
+        incrementCounter(); // Увеличиваем счетчик при отпускании кнопки
+      }
+    });
+  });
 </script>
 <head>
     <meta charset="UTF-8">
@@ -58,6 +83,8 @@
             border: 0;
             transition: all .1s ease-in;
         }
+
+
     </style>
 </head>
 <body>
