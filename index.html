@@ -20,16 +20,15 @@
         buttonHeight -= 10; // Увеличиваем высоту на 10 пикселей
         image.style.width = buttonWidth + 'px'; // Обновляем стиль ширины изображения
         image.style.height = buttonHeight + 'px'; // Обновляем стиль высоты изображения
-        navigator.vibrate(50)
     });
 
-    button.addEventListener('touchstart', () => {
+    button.addEventListener('mouseup', () => {
         buttonWidth += 10; // Увеличиваем ширину на 10 пикселей
         buttonHeight += 10; // Увеличиваем высоту на 10 пикселей
         image.style.width = buttonWidth + 'px'; // Обновляем стиль ширины изображения
         image.style.height = buttonHeight + 'px'; // Обновляем стиль высоты изображения
         incrementCounter(); // Увеличиваем счетчик на единицу
-        navigator.vibrate(50)
+        window.navigator.vibrate(100);
     });
 
     button.addEventListener('mouseout', () => {
@@ -103,3 +102,4 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </body>
 </html>
+
