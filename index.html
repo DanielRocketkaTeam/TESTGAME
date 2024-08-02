@@ -20,6 +20,7 @@
         buttonHeight -= 10; // Увеличиваем высоту на 10 пикселей
         image.style.width = buttonWidth + 'px'; // Обновляем стиль ширины изображения
         image.style.height = buttonHeight + 'px'; // Обновляем стиль высоты изображения
+        navigator.vibrate(50)
     });
 
     button.addEventListener('mouseup', () => {
