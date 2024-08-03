@@ -16,13 +16,15 @@
     const image = button.querySelector('img'); // Получаем ссылку на изображение
 
     button.addEventListener('mousedown', () => {
-      buttonWidth -= 10; // Увеличиваем ширину на 10 пикселей
+
+        buttonWidth -= 10; // Увеличиваем ширину на 10 пикселей
         buttonHeight -= 10; // Увеличиваем высоту на 10 пикселей
         image.style.width = buttonWidth + 'px'; // Обновляем стиль ширины изображения
         image.style.height = buttonHeight + 'px'; // Обновляем стиль высоты изображения
     });
 
     button.addEventListener('mouseup', () => {
+
         buttonWidth += 10; // Увеличиваем ширину на 10 пикселей
         buttonHeight += 10; // Увеличиваем высоту на 10 пикселей
         image.style.width = buttonWidth + 'px'; // Обновляем стиль ширины изображения
@@ -38,18 +40,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, user-scroll=no">
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, user-scroll=no, user-select=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AKITAP</title>
     <style>
 
+
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap');
 
-        * {
+
+
+        *{
+
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -o-user-select:none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
         body{
             overflow: hidden;
@@ -59,7 +71,9 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 200;
             color: var(--tg-theme-text-color);
-            background: var(--tg-theme-bg-color);
+            background: linear-gradient(to bottom, #00224A, #347ACD);
+
+
         }
 
         .main {
@@ -70,11 +84,13 @@
         }
 
         h1 {
+            color: white;
             margin-top:10px;
             margin-bottom:10px;
         }
 
-        p{
+        h2{
+            color: white;
             font-size:50px;
             margin-bottom:10px;
         }
@@ -87,7 +103,6 @@
             border: 0;
             transition: all .1s ease-in;
             transition: width 1s ease, height 1s ease;
-
         }
 
     </style>
@@ -95,8 +110,8 @@
 <body>
     <div class="main">
         <h1>АКИТАП</h1>
-        <p>Баланс: <span id="counter">0</span></p>
-        <button><img src="coin.png" width="300" height="300" alt="Кнопка «button»"></button>
+        <h2>Баланс: <span id="counter">0</span></h2>
+        <button><img src="coin.png" width="300" height="300" alt="Кнопка «button»" ></button>
 
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
