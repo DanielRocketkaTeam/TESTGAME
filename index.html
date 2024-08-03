@@ -6,6 +6,7 @@
     let buttonWidth = 300; // Начальная ширина кнопки
     let buttonHeight = 300; // Начальная высота кнопки
 
+
   function incrementCounter() {
     counter++;
     document.getElementById("counter").innerHTML = counter;
@@ -48,7 +49,7 @@
 
         html {
             height: 390px;
-            min-height: 700px;
+            min-height: 100%;
         }
 
 
@@ -70,6 +71,10 @@
             -ms-user-select: none;
         }
         body{
+            background-image: linear-gradient(to bottom, #00224A, #347ACD);
+            background-repeat: no-repeat;
+            background-position: center; /* Центрирование фона */
+
             overflow: hidden;
             margin:0;
             padding:0;
@@ -77,7 +82,8 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 200;
             color: var(--tg-theme-text-color);
-            background: linear-gradient(to bottom, #00224A, #347ACD);
+        }
+
 
 
         }
@@ -90,17 +96,20 @@
         }
 
         h1 {
+            margin-left:45px;
             color: white;
             margin-top:10px;
             margin-bottom:10px;
         }
 
         h2{
+            margin-left:5px;
             color: white;
             font-size:50px;
             margin-bottom:10px;
         }
         button{
+            margin-left:5px;
             margin-top:15px;
             width:300px;
             height:300px;
@@ -115,6 +124,7 @@
 </head>
 <body>
     <div class="main">
+
         <h1>АКИТАП</h1>
         <h2>Баланс: <span id="counter">0</span></h2>
         <button><img src="coin.png" width="300" height="300" alt="Кнопка «button»" ></button>
@@ -123,4 +133,3 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </body>
 </html>
-
