@@ -56,7 +56,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap');
 
 
-
         *{
 
             margin: 0;
@@ -73,7 +72,6 @@
         body{
             background-image: linear-gradient(to bottom, #00224A, #347ACD);
             background-repeat: no-repeat;
-            background-position: center; /* Центрирование фона */
 
             overflow: hidden;
             margin:0;
@@ -82,6 +80,10 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 200;
             color: var(--tg-theme-text-color);
+            display: flex; /* Делаем body flex-контейнером */
+            flex-direction: column; /* Вертикальное выравнивание */
+            align-items: center; /* Выравнивание по центру по горизонтали */
+            justify-content: center; /* Выравнивание по центру по вертикали */
         }
 
 
@@ -96,21 +98,19 @@
         }
 
         h1 {
-            margin-left:45px;
+
             color: white;
-            margin-top:10px;
-            margin-bottom:10px;
+
         }
 
         h2{
-            margin-left:5px;
+
             color: white;
             font-size:50px;
-            margin-bottom:10px;
+
         }
         button{
-            margin-left:5px;
-            margin-top:15px;
+
             width:300px;
             height:300px;
             display: inline-block;
@@ -125,9 +125,9 @@
 <body>
     <div class="main">
 
-        <h1>АКИТАП</h1>
-        <h2>Баланс: <span id="counter">0</span></h2>
-        <button><img src="coin.png" width="300" height="300" alt="Кнопка «button»" ></button>
+        <h1 align="center">АКИТАП </h1>
+        <h2 align="center">Баланс: <span id="counter">0</span></h2>
+        <button ><img src="coin.png" width="300" height="300" alt="Кнопка «button»" ></button>
 
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
