@@ -17,6 +17,8 @@
     const button = document.querySelector('button');
     const image = button.querySelector('img'); // Получаем ссылку на изображение
 
+    document.getElementById("counter").innerHTML = counter;
+
     button.addEventListener('mousedown', () => {
 
         buttonWidth -= 10; // Увеличиваем ширину на 10 пикселей
@@ -128,8 +130,8 @@
 <body>
     <div class="main">
 
-        <h1 align="center">АКИТАП </h1>
-        <h2 align="center"><span id="counter">0</span></h2>
+        <h1 align="center">AKITAP</h1>
+        <h2 align="center"><span id="counter"></span></h2>
         <button ><img src="coin.png" width="300" height="300" alt="Кнопка «button»" ></button>
 
     </div>
