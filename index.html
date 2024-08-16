@@ -24,6 +24,7 @@
 
         buttonWidth -= 10; // Увеличиваем ширину на 10 пикселей
         buttonHeight -= 10; // Увеличиваем высоту на 10 пикселей
+
         image.style.width = buttonWidth + 'px'; // Обновляем стиль ширины изображения
         image.style.height = buttonHeight + 'px'; // Обновляем стиль высоты изображения
     });
@@ -32,6 +33,7 @@
 
         buttonWidth += 10; // Увеличиваем ширину на 10 пикселей
         buttonHeight += 10; // Увеличиваем высоту на 10 пикселей
+
         image.style.width = buttonWidth + 'px'; // Обновляем стиль ширины изображения
         image.style.height = buttonHeight + 'px'; // Обновляем стиль высоты изображения
         incrementCounter(); // Увеличиваем счетчик на единицу
@@ -39,6 +41,10 @@
     });
 
     button.addEventListener('mouseout', () => {
+        if (buttonWidth < 290) {
+            buttonWidth = 300;
+            buttonHeight = 300;
+        }
     });
   });
 </script>
