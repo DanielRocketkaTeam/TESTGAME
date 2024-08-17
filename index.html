@@ -5,7 +5,7 @@
     let counter = localStorage.getItem("counter") || 0;
     let buttonWidth = 300; // Начальная ширина кнопки
     let buttonHeight = 300; // Начальная высота кнопки
-
+    let circle = document.createElement('div'); // Создаем элемент для круга
 
   function incrementCounter() {
     counter++;
@@ -20,11 +20,33 @@
     // Обновляем счетчик при загрузке страницы
     document.getElementById("counter").innerHTML = counter;
 
+    // Добавляем круг в DOM
+    document.body.appendChild(circle);
+
+    // Стилизуем круг
+    circle.style.position = 'absolute';
+    circle.style.borderRadius = '50%';
+    circle.style.backgroundColor = 'rgba(255, 255, 255, 0.5)'; // Полупрозрачный белый цвет
+    circle.style.opacity = 1; // Сначала круг невидим
+    circle.style.zIndex = -1; // Размещаем круг позади кнопки
+    circle.style.boxShadow = '0px 0px 30px 30px green'; // Добавляем белый shadow box
+
     button.addEventListener('mousedown', () => {
+      // Показываем круг и увеличиваем его размер
+      circle.style.opacity = 0.85;
+      circle.style.width = 250 + 'px';
+      circle.style.height = 250 + 'px';
+      circle.style.top = button.offsetTop + 26 + 'px';
+      circle.style.left = button.offsetLeft + 22 + 'px';
+            // Скрываем круг через 0,3 секунды
 
     });
 
     button.addEventListener('mouseup', () => {
+        setTimeout(() => {
+        circle.style.opacity = 0.4;
+      }, 0);
+
 
         incrementCounter(); // Увеличиваем счетчик на единицу
         window.navigator.vibrate(100);
@@ -38,6 +60,9 @@
     });
   });
 </script>
+
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -116,7 +141,6 @@
 
             color: white;
             font-size:50px;
-
         }
         button{
 
@@ -149,7 +173,7 @@
 <body>
     <div class="main">
 
-        <h1 align="center">AKITAP</h1>
+        <h1 align="center">$MSTK</h1>
         <h2 align="center"><span id="counter"></span></h2>
         <button onclick="navigator.vibrate(50);"><img src="coin.png" width="300" height="300" alt="Кнопка «button»" ></button>
 
