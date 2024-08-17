@@ -51,7 +51,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, user-scroll=no, user-select=no">
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, user-scroll=no, user-select=no" >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AKITAP</title>
     <style>
@@ -141,6 +141,15 @@
             transition: width 1s ease, height 1s ease;
             -webkit-appearance: none;
             -moz-appearance:none;
+            overflow: hidden;
+            position: relative;
+        }
+        button img {
+            width: 100%; /* Изображение занимает всю ширину кнопки */
+            height: 100%; /* Изображение занимает всю высоту кнопки */
+            position: center; /* Абсолютное позиционирование для изображения */
+            top: 0; /* Верхняя граница изображения совпадает с верхней границей кнопки */
+            left: 0; /* Левая граница изображения совпадает с левой границей кнопки */
         }
 
     </style>
