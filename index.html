@@ -22,20 +22,10 @@
 
     button.addEventListener('mousedown', () => {
 
-        buttonWidth -= 10; // Увеличиваем ширину на 10 пикселей
-        buttonHeight -= 10; // Увеличиваем высоту на 10 пикселей
-
-        image.style.width = buttonWidth + 'px'; // Обновляем стиль ширины изображения
-        image.style.height = buttonHeight + 'px'; // Обновляем стиль высоты изображения
     });
 
     button.addEventListener('mouseup', () => {
 
-        buttonWidth += 10; // Увеличиваем ширину на 10 пикселей
-        buttonHeight += 10; // Увеличиваем высоту на 10 пикселей
-
-        image.style.width = buttonWidth + 'px'; // Обновляем стиль ширины изображения
-        image.style.height = buttonHeight + 'px'; // Обновляем стиль высоты изображения
         incrementCounter(); // Увеличиваем счетчик на единицу
         window.navigator.vibrate(100);
     });
@@ -137,8 +127,7 @@
             background-color: rgba(255, 255, 255, 0); /* прозрачный фон */
             border: none; /* без границы */
             outline: none; /* без обводки */
-            transition: all .1s ease-in;
-            transition: width 1s ease, height 1s ease;
+            transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
             -webkit-appearance: none;
             -moz-appearance:none;
             overflow: hidden;
@@ -150,6 +139,9 @@
             position: center; /* Абсолютное позиционирование для изображения */
             top: 0; /* Верхняя граница изображения совпадает с верхней границей кнопки */
             left: 0; /* Левая граница изображения совпадает с левой границей кнопки */
+        }
+        button:active {
+            transform: scale(0.96); /* Небольшое сжатие */
         }
 
     </style>
